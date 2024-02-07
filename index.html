@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE-edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Filip - portfolio - Polski</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/3baa6d5b80.js" crossorigin="anonymous"></script>
+</head>
+<body>
+<a href="#top" id="imagelink" style="display: none;">
+    <img src="images/logomoving.png" alt="Przewiń do góry">
+</a>  
+<div id="header">
+    <div class="container">
+        <nav>
+            <div class="flags">
+                <img src="images/angielski.png" alt="British Flag" class="flag" id="englishFlag">
+                <img src="images/polski.png" alt="Polish Flag" class="flag" id="polishFlag">
+            </div>            
+            <ul id="sidemenu">
+                <li><a href="#about">O Mnie</a></li>
+                <li><a href="#services">Usługi</a></li>
+                <li><a href="#portfolio">Projekty</a></li>
+                <li><a href="#contact">Kontakt</a></li> 
+            </ul>
+            <i class="fa-solid fa-bars" onclick="openmenu()"></i>
+        </nav>
+        <div class="header-text">
+            <div id="typewriter"></div>
+        </div>
+    </div>
+</div>
+<!-----------about me------------>
+<div id="about">
+    <div class="container">
+        <div class="row">
+            <div class="about-col-1">
+                <img src="images/photo.png">
+            </div>
+            <div class="about-col-2">
+                <h1 class="sub-title">O Mnie</h1>
+                <p>Podstawowe informacje</p>
+                <div class="tab-titles">
+                    <p class="tab-links active-link" onclick="opentab('skills')">Zdolności</p>
+                    <p class="tab-links" onclick="opentab('experience')">Doświadczenie</p>
+                    <p class="tab-links" onclick="opentab('education')">Wykształcenie</p>
+                </div>
+                <div class="tab-contents active-tab" id="skills">
+                    <ul>
+                        <li><span>UI/UX</span><br>graficzny projekt witryny</li>
+                        <li><span>Web design</span><br>zaprogramowanie witryny</li>
+                        <li><span>App Design</span><br>Zaprogramowanie programu(C#,C++,python)</li>
+                    </ul>
+                </div>
+                <div class="tab-contents" id="experience">
+                    <ul>
+                        <li><span>Tester</span><br>Sprawdzanie funkcjonalności stron internetowych</li>
+                        <li><span>Tester</span><br>Raportowanie oraz możliwe naprawianie błędów </li>
+                    </ul>
+                </div>
+                <div class="tab-contents" id="education">
+                    <ul>
+                        <li><span>10/2022 - obecnie</span><br>Collegium Da Vinci (Studia inżynierskie, Informatyka)</li>
+                        <li><span>09/2019 - 06/2022</span><br>II Liceum Ogólnokształcące w Starogardzie Gdańskim</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-------services-------->
+<div id="services">
+    <div class="container">
+        <h1 class="sub-title">Moje Usługi</h1>
+        <i class="sub-title2">Poniżej możesz zapoznać się z kosztami moich usług. To są tylko poglądowe koszty godzinowe. Realne mogą różnić się od zapotrzebowania klienta.</i>
+        <i class="sub-title2">W celu ustalenia dokładniejszych danych skontaktuj się ze mną poprzez formularz, drogą mailową bądź telefonicznie.</i>
+
+        <div class="services-list">
+            <div>
+                <i class="fa-solid fa-code"></i>
+                <h2>Web Design</h2>
+                <p>Zaplanowanie i zaprojektowanie witryny</p>
+            </div>
+            <div>
+                <i class="fa-solid fa-crop-simple"></i>
+                <h2>UI/UX Design</h2>
+                <p>Stworzenie graficznego projektu witryny</p>
+            </div>
+            <div>
+                <i class="fa-brands fa-app-store"></i>
+                <h2>App Design</h2>
+                <p>Zaprogramowanie działania aplikacji</p>
+            </div>
+            <div>
+                <i class="fa-solid fa-computer"></i>
+                <h2>Tester Webowy</h2>
+                <p>Testy strony pod względem wyszukiwania błędów i odpowiedniego działania</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Calculator -->
+        <div class="service-calculator">
+        <div>
+            <h3>Web Design</h3>
+            <input type="number" id="webDesignHours" placeholder="Ilość godzin" min="0" max="100">
+            <p>Cena za godzinę: 50zł</p>
+            <p>Łączny koszt: <span id="webDesignCost">0</span> zł</p>
+        </div>
+        <div>
+            <h3>UI/UX Design</h3>
+            <input type="number" id="uiUxDesignHours" placeholder="Ilość godzin" min="0" max="100">
+            <p>Cena za godzinę: 35zł</p>
+            <p>Łączny koszt: <span id="uiUxDesignCost">0</span> zł</p>
+        </div>
+        <div>
+            <h3>App Design</h3>
+            <input type="number" id="appDesignHours" placeholder="Ilość godzin" min="0" max="100">
+            <p>Cena za godzinę: 50zł</p>
+            <p>Łączny koszt: <span id="appDesignCost">0</span> zł</p>
+        </div>
+        <div>
+            <h3>Tester</h3>
+            <input type="number" id="testerHours" placeholder="Ilość godzin" min="0" max="100">
+            <p>Cena za godzinę: 30zł</p>
+            <p>Łączny koszt: <span id="testerCost">0</span> zł</p>
+        </div>
+    </div>
+    <div class="total-cost">
+        <h3>Łącznie:</h3>
+        <p>Łączna ilość godzin: <span id="totalHours">0</span></p>
+        <p>Łączny koszt: <span id="totalCost">0</span> zł</p>
+    </div>
+</div>
+
+<!-------portfolio-------->
+<div id="portfolio">
+    <div class="container">
+        <h1 class="sub-title">Wybrane Projekty</h1>
+        <div class="work-list">
+            <div class="work" id="work1">
+                <img src="images/work-1.png">
+                <div class="layer">
+                    <h3>Projekt - biblioteka</h3>
+                    <a href="#portfolio" onclick="displayProjectDetails('work1')"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                </div>
+            </div>
+            
+            <div class="work" id="work2">
+                <img src="images/work-2.png">
+                <div class="layer">
+                    <h3>Projekt - gra z użyciem Unity</h3>
+                    <a href="#portfolio" onclick="displayProjectDetails('work2')"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                </div>
+            </div>
+            <div class="work" id="work3">
+                <img src="images/work-3.png">
+                <div class="layer">
+                    <h3>Projekt - strona bankowa (Design)</h3>
+                    <a href="#portfolio" onclick="displayProjectDetails('work3')"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal do wyświetlania szczegółów projektu -->
+<div id="projectModal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <div id="modalBody"></div>
+    </div>
+</div>
+
+<div id="projectModal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <div id="modalBody"></div>
+    </div>
+</div>
+
+<script>
+    function displayProjectDetails(projectId) {
+    const project = projects[projectId];
+    let modalContent = `<h2>${project.title}</h2>`;
+    modalContent += `<p>${project.description}</p>`;
+    modalContent += `<div class="slider">`;
+
+    project.images.forEach(image => {
+        modalContent += `<img src="${image}" alt="Project Image">`;
+    });
+
+    modalContent += `</div>`;
+    modalContent += `<button id="prev-btn" class="arrow-button">&#8592;</button>`;
+    modalContent += `<button id="next-btn" class="arrow-button">&#8594;</button>`;
+
+    const modalBody = document.getElementById('modalBody');
+    modalBody.innerHTML = modalContent;
+
+    const images = modalBody.querySelectorAll('.slider img');
+    let currentImageIndex = 0;
+    if (images.length > 0) {
+        images[currentImageIndex].style.display = 'block';
+    }
+
+    const prevBtn = document.getElementById('prev-btn');
+    const nextBtn = document.getElementById('next-btn');
+
+    prevBtn.addEventListener('click', () => {
+        images[currentImageIndex].style.display = 'none';
+        currentImageIndex = (currentImageIndex - 1 + images.length) % images.length;
+        images[currentImageIndex].style.display = 'block';
+    });
+
+    nextBtn.addEventListener('click', () => {
+        images[currentImageIndex].style.display = 'none';
+        currentImageIndex = (currentImageIndex + 1) % images.length;
+        images[currentImageIndex].style.display = 'block';
+    });
+
+    document.getElementById('projectModal').style.display = 'block';
+    setTimeout(() => document.getElementById('projectModal').style.opacity = 1, 10);
+}
+
+function closeModal() {
+    const modal = document.getElementById('projectModal');
+    modal.style.opacity = 0;
+    setTimeout(() => modal.style.display = 'none', 500);
+}
+
+const projects = {
+    'work1': {
+        title: 'Projekt - biblioteka',
+        description: 'Projekt ten ma za zadanie zasymulować główne sytuacje, które można spotkać w bibliotece. Aplikacja działa z użyciem plików .json, w których zapisane są dane dotyczące autorów książek i wypożyczonych książek. Aplikacja pozwala na: Wypożyczenie książki i jej oddanie, sprawdzenie jakie książki znajdują się w bibliotece, a również ich dodanie. Wszystkie te dane są zapisywane po wyjściu z programu po wyborze "6". Jest również opcja sprawdzenia kto wypożyczył jakie książki, ale jest to dostępne tylko dla Administracji :)',
+        images: ['images/work-1.3.png','images/work-1.4.png','images/work-1.5.png','images/work-1.1.png','images/work-1.2.png']
+    },
+    'work2': {
+        title: 'Projekt - gra z użyciem silnika Unity',
+        description: 'Może wydaje Ci się, że gra wygląda na prostą, ale w rzeczywistości wątpię, że mógłbyć ją przejść. W skrócie... musisz kierować postacią, omijać przeszkody, zabijać potwory(zombie, szkielety i nietoperze), które się do Ciebie zbliżają, a przede wszystkim iść naprzód, ponieważ aby wygrać, trzeba dojść do końca mapy. A jeszcze jedno... masz jedno życie :) \n\n Gra budowana od podstaw w języku C#. W zespole 3 osobowym. Gra jest dostępna online. Sprawdź sam/a https://psampir.itch.io/wojak-the-warrior ',
+        images: ['images/work-2.1.png','images/work-2.2.png','images/work-2.3.png','images/work-2.4.png']
+    },
+    'work3' : {
+        title: 'Projekt - Design strony bankowej',
+        description: 'Projekt ten prezentuje innowacyjny design interfejsu użytkownika (UI), który reprezentuje stronę główną systemu bankowości internetowej, dostępną bezpośrednio po zalogowaniu się klienta. Został on zaprojektowany, aby zapewnić nie tylko estetyczne doznania, ale również intuicyjność użytkowania. Strona oferuje szybki dostęp do podstawowych informacji bankowych, takich jak sprawdzanie salda, przegląd ostatnich transakcji, szybkie przelewy (Blik) oraz wymianę walut w kantorze. ',
+        images: ['images/work-3.1.png','images/work-3.2.png','images/work-3.3.png']
+    }
+};
+</script> 
+
+
+
+
+<!-------------contact-------------->
+<div id="contact">
+    <div class="container">
+        <div class="row">
+            <div class="contact-left">
+                <h1 class="sub-title">Kontakt</h1>
+                <p><i class="fa-solid fa-paper-plane"></i>f.szulcit@gmail.com</p>
+                <p><i class="fa-solid fa-square-phone"></i>+48 721656866</p>
+                <div class="social-icons">
+                    <a href="https://www.facebook.com/filip.szulc.395" target="_blank"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="https://www.instagram.com/fillip.0.3.0.8/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://www.linkedin.com/in/filip-szulc-b305b0245/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+                </div>
+                <a href="images/CV.pdf" target="_blank" download class="button button2">Pobierz CV</a>
+            </div>
+            <div class="contact-right">
+                <form action="https://formspree.io/f/mqkrenlb" method="POST">
+                    <input type="text" name="Name" placeholder="Twoje imię" required>
+                    <input type="email" name="email" placeholder="Twój adres email"required>
+                    <textarea name="Message" rows="6" placeholder="Treść wiadomości"></textarea>
+                    <button type="submit" class="button button2">Zatwierdź</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="copyright">
+        <p>© Wszelkie prawa zastrzeżone.</p>
+    </div>
+</div>
+
+
+<!--skrypt odpowiadajacy za podkreslenia w menu oraz animacja pisania maszynowego-->
+<script>
+
+    var tablinks = document.getElementsByClassName("tab-links");
+    var tabcontents = document.getElementsByClassName("tab-contents");
+    
+    function opentab(tabname){
+        for(tablink of tablinks){
+            tablink.classList.remove("active-link");
+        }
+        for(tabcontent of tabcontents){
+            tabcontent.classList.remove("active-tab");
+        }
+        event.currentTarget.classList.add("active-link")
+        document.getElementById(tabname).classList.add("active-tab")
+    }
+    if (window.innerWidth > 601) {
+    const text = "Witaj! Jestem <span class='namecolor'>Filip Szulc</span>.\nJestem <span class='color'>studentem</span> drugiego roku \n<span class='color'>informatyki</span> w Poznaniu. Moja pasja do \nprogramowania i technologii napędzana jest \n<span class='color'>zawziętością i pełnym zaangażowaniem</span> \nw zadania, których się podejmuję.\nStawiam na <span class='color'>jakość i funkcjonalność</span>, \ndając z siebie zawsze <span class='color'>100%</span>.";
+const speed = 30;
+const displayDelay = 10000;
+const deleteDelay = 500;
+let i = 0;
+let isDeleting = false;
+    
+function typeWriter() {
+  if (isDeleting) {
+    if (i > 0) {
+      i--;
+      document.getElementById("typewriter").innerHTML = text.substring(0, i);
+      setTimeout(typeWriter, speed);
+    } else {
+      isDeleting = false;
+      setTimeout(typeWriter, deleteDelay);
+    }
+  } else {
+    if (i < text.length) {
+      i++;
+      document.getElementById("typewriter").innerHTML = text.substring(0, i);
+      setTimeout(typeWriter, speed);
+    } else {
+      isDeleting = true;
+      setTimeout(typeWriter, displayDelay);
+    }
+  }
+}
+}
+if (window.innerWidth < 601) {
+    const text = "Witaj! Jestem <span class='namecolor'>Filip Szulc</span>. Jestem <span class='color'>studentem</span> drugiego roku <span class='color'>informatyki</span> w Poznaniu. Moja pasja do programowania i technologii napędzana jest <span class='color'>zawziętością i pełnym zaangażowaniem </span> w zadania, których się podejmuję. Stawiam na <span class='color'>jakość i funkcjonalność</span>, dając z siebie zawsze <span class='color'>100%</span>.";
+const speed = 30;
+const displayDelay = 10000;
+const deleteDelay = 500; 
+let i = 0;
+let isDeleting = false;
+    
+function typeWriter() {
+  if (isDeleting) {
+    if (i > 0) {
+      i--;
+      document.getElementById("typewriter").innerHTML = text.substring(0, i);
+      setTimeout(typeWriter, speed);
+    } else {
+      isDeleting = false;
+      setTimeout(typeWriter, deleteDelay);
+    }
+  } else {
+    if (i < text.length) {
+      i++;
+      document.getElementById("typewriter").innerHTML = text.substring(0, i);
+      setTimeout(typeWriter, speed);
+    } else {
+      isDeleting = true;
+      setTimeout(typeWriter, displayDelay);
+    }
+  }
+}
+}
+window.onload = typeWriter;
+</script>
+    
+
+<!--skrypt sluzacy za dzialanie menu mobilnego-->
+<script>
+    function openmenu() {
+        var menu = document.getElementById("sidemenu");
+        menu.classList.toggle("active");
+    }
+</script>
+
+
+<!--skrypt odpowiadajacy za pojawianie się logo w narozniku-->
+<script>
+window.addEventListener('scroll', function() {
+    var imageLink = document.getElementById('imagelink');
+    if (window.pageYOffset >= 0) { 
+        imageLink.style.display = 'block';
+    } else {
+        imageLink.style.display = 'none';
+    }
+});
+</script>
+
+<!--skrypt odpowiadajacy za podkreslenie flagi w menu-->
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const flags = document.querySelectorAll('.flag');
+    
+        flags.forEach(flag => {
+            flag.addEventListener('click', function() {
+                flags.forEach(f => f.classList.remove('active'));
+                this.classList.add('active');
+                
+                if (this.id === 'englishFlag') {
+                    changeLanguage('en');
+                } else if (this.id === 'polishFlag') {
+                    changeLanguage('pl');
+                }
+            });
+        });
+    
+        // Set Polish flag as active by default
+        const polishFlag = document.getElementById('polishFlag');
+        polishFlag.classList.add('active');
+    });
+    
+    function changeLanguage(lang) {
+        if (lang === 'en') {
+            window.location.href = 'index.ang.html';
+        } else if (lang === 'pl') {
+            window.location.href = 'index.html';
+        }
+    }
+    </script>
+
+
+<!--skrypt odpowiadajacy za plynne przesuwanie z menu-->
+<script>
+    document.querySelectorAll('nav ul li a').forEach(anchor => {
+  anchor.addEventListener('click', function (e) {
+    e.preventDefault();
+    const blockID = this.getAttribute('href');
+    const section = document.querySelector(blockID);
+    if (section) {
+      section.scrollIntoView({ behavior: 'smooth' });
+    }
+  });
+});
+</script>
+
+<!--Skrypt odpowiadajacy za poprawne dzialanie kalkulatora godzin-->
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    function calculateCost(hourInputId, costPerHour, costDisplayId) {
+        const hours = parseInt(document.getElementById(hourInputId).value) || 0;
+        const cost = hours * costPerHour;
+        document.getElementById(costDisplayId).textContent = cost;
+        calculateTotal();
+    }
+
+    function calculateTotal() {
+        const webDesignHours = parseInt(document.getElementById('webDesignHours').value) || 0;
+        const uiUxDesignHours = parseInt(document.getElementById('uiUxDesignHours').value) || 0;
+        const appDesignHours = parseInt(document.getElementById('appDesignHours').value) || 0;
+        const testerHours = parseInt(document.getElementById('testerHours').value) || 0;
+
+        const totalHours = webDesignHours + uiUxDesignHours + appDesignHours + testerHours;
+        const totalCost = webDesignHours * 50 + uiUxDesignHours * 35 + appDesignHours * 50 + testerHours * 30;
+
+        document.getElementById('totalHours').textContent = totalHours;
+        document.getElementById('totalCost').textContent = totalCost;
+    }
+
+    document.getElementById('webDesignHours').addEventListener('input', () => calculateCost('webDesignHours', 50, 'webDesignCost'));
+    document.getElementById('uiUxDesignHours').addEventListener('input', () => calculateCost('uiUxDesignHours', 35, 'uiUxDesignCost'));
+    document.getElementById('appDesignHours').addEventListener('input', () => calculateCost('appDesignHours', 50, 'appDesignCost'));
+    document.getElementById('testerHours').addEventListener('input', () => calculateCost('testerHours', 30, 'testerCost'));
+});
+</script>
+
+
+
+<!--Skrypt odpowiadający za działanie formularza kontaktowego-->
+<script>
+const form = document.getElementsByTagName('form')[0];
+const message = document.createElement('div'); 
+
+form.addEventListener('submit', function(event) {
+  event.preventDefault();
+
+  // Prosta walidacja czy formularz nie jest pusty
+  if(form.checkValidity()) {
+    fetch(form.action, {
+      method: form.method,
+      body: new FormData(form),
+      headers: {
+        'Accept': 'application/json'
+      }
+    }).then(response => {
+      if (response.ok) {
+        message.textContent = 'Wiadomość została wysłana! Zwykle odpowiadam w ciągu 24h.';
+        message.style.color = 'green'; 
+      } else {
+        message.textContent = 'Wystąpił błąd podczas wysyłania wiadomości.';
+        message.style.color = 'red'; 
+        console.error('Network response was not ok.');
+      }
+    }).catch(error => {
+      message.textContent = 'Wystąpił błąd podczas wysyłania wiadomości.';
+      message.style.color = 'red'; 
+      console.error('There has been a problem with your fetch operation:', error);
+    });
+
+    form.reset(); 
+  } else {
+    message.textContent = 'Proszę wypełnić wszystkie pola.';
+    message.style.color = 'red'; 
+  }
+
+  form.appendChild(message); 
+});
+
+</script>
+
+</body>
+</html>
